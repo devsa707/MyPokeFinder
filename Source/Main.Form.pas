@@ -9,6 +9,7 @@ uses
   System.Classes,
   System.Variants,
   System.Threading,
+  System.Messaging,
   FMX.Types,
   FMX.Controls,
   FMX.Forms,
@@ -22,6 +23,7 @@ uses
   FMX.Edit,
   //
   PokemonList.Frame,
+  PokemonList.Search,
   Pokemon.Entity,
   PokemonFinder,
   //
@@ -34,21 +36,18 @@ type
     svgLogo: TSkSvg;
     StyleBook1: TStyleBook;
     SkSvg1: TSkSvg;
-    svgBackgroundList: TSkSvg;
     SkSvg2: TSkSvg;
     svgList: TSkSvg;
     framePokemonList: TVertScrollBox;
     svgLogoBackground: TSkSvg;
-    edtPokemonSearch: TEdit;
     svgSearch: TSkSvg;
-    gridDetail: TGridLayout;
-    SkAnimatedImage1: TSkAnimatedImage;
     procedure FormResize(Sender: TObject);
     procedure svgSearchClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure edtPokemonSearchKeyDown(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
   private
+    FSearchPokemon  : TSearchPokemon;
     FSkAnimatedImage: TSkAnimatedImage;
+    procedure Listen(const Sender: TObject; const AMessage: TMessage);
     procedure BeginLoadingAnimation;
     procedure FinishLoadingAnimation;
     procedure Search(APokemon: string = '');
@@ -92,12 +91,6 @@ begin
   AVertScrollBox.EndUpdate;
 end;
 
-procedure TMainForm.edtPokemonSearchKeyDown(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
-begin
-  if Key = 13 then
-    Search(edtPokemonSearch.Text);
-end;
-
 procedure TMainForm.FinishLoadingAnimation;
 begin
   FSkAnimatedImage.Free;
@@ -106,6 +99,7 @@ end;
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
   Search;
+  TMessageManager.DefaultManager.SubscribeToMessage(TSearch, Listen);
 end;
 
 procedure TMainForm.FormResize(Sender: TObject);
@@ -117,6 +111,26 @@ begin
   end
   else
     gridMain.Align := TAlignLayout.Client;
+end;
+
+procedure TMainForm.Listen(const Sender: TObject; const AMessage: TMessage);
+var
+  LSearch: TSearch;
+begin
+  LSearch := AMessage as TSearch;
+  case LSearch.messageType of
+    mtSearch:
+      begin
+        Search(LSearch.Pokemon);
+        FSearchPokemon.Free;
+        Self.RemoveObject(FSearchPokemon);
+      end;
+    mtCancel:
+      begin
+        FSearchPokemon.Free;
+        Self.RemoveObject(FSearchPokemon);
+      end;
+  end;
 end;
 
 procedure TMainForm.Search(APokemon: string = '');
@@ -202,7 +216,9 @@ end;
 
 procedure TMainForm.svgSearchClick(Sender: TObject);
 begin
-  Search(edtPokemonSearch.Text);
+  FSearchPokemon := TSearchPokemon.Create(nil);
+  Self.AddObject(FSearchPokemon);
+  FSearchPokemon.AnimationIn;
 end;
 
 end.
