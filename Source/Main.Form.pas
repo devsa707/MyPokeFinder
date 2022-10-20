@@ -122,13 +122,17 @@ begin
     mtSearch:
       begin
         Search(LSearch.Pokemon);
-        FSearchPokemon.Free;
+        Self.BeginUpdate;
+        FreeAndNil(FSearchPokemon);
         Self.RemoveObject(FSearchPokemon);
+        Self.EndUpdate;
       end;
     mtCancel:
       begin
-        FSearchPokemon.Free;
+        Self.BeginUpdate;
+        FreeAndNil(FSearchPokemon);
         Self.RemoveObject(FSearchPokemon);
+        Self.EndUpdate;
       end;
   end;
 end;
@@ -216,9 +220,12 @@ end;
 
 procedure TMainForm.svgSearchClick(Sender: TObject);
 begin
-  FSearchPokemon := TSearchPokemon.Create(nil);
-  Self.AddObject(FSearchPokemon);
-  FSearchPokemon.AnimationIn;
+  if not Assigned(FSearchPokemon) then
+  begin
+    FSearchPokemon := TSearchPokemon.Create(nil);
+    svgLogo.AddObject(FSearchPokemon);
+    FSearchPokemon.AnimationIn;
+  end;
 end;
 
 end.

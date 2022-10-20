@@ -40,12 +40,16 @@ type
     GridPanelLayout1: TGridPanelLayout;
     edtPokemonSearch: TEdit;
     svgBack: TSkSvg;
+    FloatAnimationIn: TFloatAnimation;
     procedure edtPokemonSearchKeyDown(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure svgBackClick(Sender: TObject);
+    procedure FloatAnimationInFinish(Sender: TObject);
+    procedure FloatAnimationInProcess(Sender: TObject);
   private
     procedure SearchPokemon(AValue: string);
   public
     procedure AnimationIn;
+    procedure AnimationOut;
   end;
 
 implementation
@@ -55,8 +59,13 @@ implementation
 
 procedure TSearchPokemon.AnimationIn;
 begin
-  TAnimator.AnimateFloat(Self, 'Height', 100, 0.4, TAnimationType.In, TInterpolationType.Linear);
-  edtPokemonSearch.SetFocus;
+  FloatAnimationIn.Start;
+end;
+
+procedure TSearchPokemon.AnimationOut;
+begin
+  FloatAnimationIn.Inverse := True;
+  FloatAnimationIn.Start;
 end;
 
 procedure TSearchPokemon.edtPokemonSearchKeyDown(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
@@ -67,13 +76,26 @@ begin
   end;
 end;
 
+procedure TSearchPokemon.FloatAnimationInFinish(Sender: TObject);
+begin
+  if not FloatAnimationIn.Inverse then
+    Self.Align := TAlignLayout.Client;
+end;
+
+procedure TSearchPokemon.FloatAnimationInProcess(Sender: TObject);
+begin
+  Self.Align := TAlignLayout.Right;
+end;
+
 procedure TSearchPokemon.SearchPokemon(AValue: string);
 begin
+  AnimationOut;
   TMessageManager.DefaultManager.SendMessage(Self, TSearch.Create(AValue, TMessageType.mtSearch));
 end;
 
 procedure TSearchPokemon.svgBackClick(Sender: TObject);
 begin
+  AnimationOut;
   TMessageManager.DefaultManager.SendMessage(Self, TSearch.Create(EmptyStr, TMessageType.mtCancel));
 end;
 
