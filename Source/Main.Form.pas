@@ -22,6 +22,7 @@ uses
   FMX.Controls.Presentation,
   FMX.Edit,
   //
+  // PokemonFrame.Detail,
   PokemonList.Frame,
   PokemonList.Search,
   Pokemon.Entity,
@@ -44,10 +45,11 @@ type
     procedure FormResize(Sender: TObject);
     procedure svgSearchClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure framePokemonListViewportPositionChange(Sender: TObject; const OldViewportPosition, NewViewportPosition: TPointF; const ContentSizeChanged: Boolean);
   private
     FSearchPokemon  : TSearchPokemon;
     FSkAnimatedImage: TSkAnimatedImage;
-    procedure Listen(const Sender: TObject; const AMessage: TMessage);
+    procedure SearchPokemonListener(const Sender: TObject; const AMessage: TMessage);
     procedure BeginLoadingAnimation;
     procedure FinishLoadingAnimation;
     procedure Search(APokemon: string = '');
@@ -99,7 +101,7 @@ end;
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
   Search;
-  TMessageManager.DefaultManager.SubscribeToMessage(TSearch, Listen);
+  TMessageManager.DefaultManager.SubscribeToMessage(TSearch, SearchPokemonListener);
 end;
 
 procedure TMainForm.FormResize(Sender: TObject);
@@ -113,7 +115,34 @@ begin
     gridMain.Align := TAlignLayout.Client;
 end;
 
-procedure TMainForm.Listen(const Sender: TObject; const AMessage: TMessage);
+procedure TMainForm.framePokemonListViewportPositionChange(Sender: TObject; const OldViewportPosition, NewViewportPosition: TPointF; const ContentSizeChanged: Boolean);
+var
+  LTask: ITask;
+begin
+  if ((NewViewportPosition.Y + 700) > framePokemonList.ContentBounds.Size.cy) and //
+    (NewViewportPosition.Y > framePokemonList.Controls.Last.Position.Y - 100) and //
+    (framePokemonList.Content.ChildrenCount > 15) then
+  begin
+    if not framePokemonList.IsUpdating then
+    begin
+      LTask := TTask.Run(
+        procedure
+        begin
+          BeginLoadingAnimation;
+          SearchPokemonList(framePokemonList.Content.ChildrenCount, framePokemonList.Content.ChildrenCount + 20);
+          TThread.Synchronize(TThread.CurrentThread,
+            procedure
+            begin
+              framePokemonList.RecalcSize;
+              FinishLoadingAnimation;
+            end);
+        end);
+      LTask.Start;
+    end;
+  end;
+end;
+
+procedure TMainForm.SearchPokemonListener(const Sender: TObject; const AMessage: TMessage);
 var
   LSearch: TSearch;
 begin

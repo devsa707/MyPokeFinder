@@ -2730,6 +2730,7 @@ object MainForm: TMainForm
         Size.Height = 512.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
+        OnViewportPositionChange = framePokemonListViewportPositionChange
         Viewport.Width = 400.000000000000000000
         Viewport.Height = 512.000000000000000000
       end

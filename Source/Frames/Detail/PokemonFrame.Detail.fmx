@@ -1,21 +1,22 @@
 object PokemonFrameDetail: TPokemonFrameDetail
-  Padding.Left = 10.000000000000000000
-  Padding.Top = 10.000000000000000000
-  Padding.Right = 10.000000000000000000
-  Padding.Bottom = 10.000000000000000000
-  Size.Width = 400.000000000000000000
-  Size.Height = 400.000000000000000000
+  Align = Contents
+  Padding.Left = 20.000000000000000000
+  Padding.Top = 20.000000000000000000
+  Padding.Right = 20.000000000000000000
+  Padding.Bottom = 20.000000000000000000
+  Size.Width = 410.000000000000000000
+  Size.Height = 639.000000000000000000
   Size.PlatformDefault = False
-  object SkSvg1: TSkSvg
+  object svgBackground: TSkSvg
     Align = Client
-    Padding.Left = 5.000000000000000000
-    Padding.Top = 5.000000000000000000
-    Padding.Right = 5.000000000000000000
-    Padding.Bottom = 5.000000000000000000
-    Size.Width = 380.000000000000000000
-    Size.Height = 380.000000000000000000
+    Anchors = []
+    Padding.Left = 10.000000000000000000
+    Padding.Top = 10.000000000000000000
+    Padding.Right = 10.000000000000000000
+    Padding.Bottom = 10.000000000000000000
+    Size.Width = 370.000000000000000000
+    Size.Height = 599.000000000000000000
     Size.PlatformDefault = False
-    Svg.OverrideColor = claYellowgreen
     Svg.Source = 
       '<?xml version="1.0" encoding="UTF-8"?>'#13#10'<!DOCTYPE svg PUBLIC "-/' +
       '/W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-200109' +
@@ -24,84 +25,263 @@ object PokemonFrameDetail: TPokemonFrameDetail
       'h="437px" height="764px" version="1.0" shape-rendering="geometri' +
       'cPrecision" text-rendering="geometricPrecision" image-rendering=' +
       '"optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"'#13#10'viewB' +
-      'ox="0 0 9983 17450"'#13#10' xmlns:xlink="http://www.w3.org/1999/xlink"' +
-      #13#10' xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">'#13#10' <g id' +
-      '="Camada_x0020_1">'#13#10'  <metadata id="CorelCorpID_0Corel-Layer"/>'#13 +
-      #10'  <rect fill="#D2D3D5" transform="matrix(9.51283E-15 0.41857 -0' +
-      '.239456 7.39042E-15 9983 -0.000117699)" width="41690" height="41' +
-      '690" rx="4047" ry="4047"/>'#13#10' </g>'#13#10'</svg>'
+      'ox="0 0 108831 190237"'#13#10' xmlns:xlink="http://www.w3.org/1999/xli' +
+      'nk"'#13#10' xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">'#13#10' <d' +
+      'efs>'#13#10'   <linearGradient id="id0" gradientUnits="userSpaceOnUse"' +
+      ' x1="54415" y1="190237" x2="54415" y2="0">'#13#10'    <stop id="primar' +
+      'y_color" offset="0" stop-opacity="1" stop-color="#99FF00"/>'#13#10'   ' +
+      ' <stop id="secondary_color" offset="1" stop-opacity="1" stop-col' +
+      'or="#FEFEFE"/>'#13#10'   </linearGradient>'#13#10' </defs>'#13#10' <g id="Camada_x' +
+      '0020_1">'#13#10'  <metadata id="CorelCorpID_0Corel-Layer"/>'#13#10'  <path f' +
+      'ill="url(#id0)" d="M108831 10565l0 169107c0,5810 -4754,10565 -10' +
+      '565,10565l-87701 0c-5811,0 -10565,-4755 -10565,-10565l0 -169107c' +
+      '0,-5811 4754,-10565 10565,-10565l87701 0c5811,0 10565,4754 10565' +
+      ',10565z"/>'#13#10' </g>'#13#10'</svg>'
     Svg.WrapMode = Stretch
-    object GridPanelLayout1: TGridPanelLayout
+    object gridBackGround: TGridPanelLayout
       Align = Client
-      Size.Width = 370.000000000000000000
-      Size.Height = 370.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 579.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 0
+      TabOrder = 1
       ColumnCollection = <
         item
-          Value = 50.000004470348220000
-        end
-        item
-          Value = 49.999995529651770000
+          Value = 100.000000000000000000
         end>
       ControlCollection = <
         item
           Column = 0
-          Control = aniPokemon
-          Row = 0
-          RowSpan = 7
-        end
-        item
-          Column = 1
           Control = lblName
           Row = 0
-        end
-        item
-          Column = 1
-          Control = svgHealthBackground
-          Row = 1
         end>
       RowCollection = <
         item
-          SizeStyle = Absolute
-          Value = 25.000000000000000000
+          Value = 14.893613084727290000
         end
         item
-          SizeStyle = Absolute
-          Value = 25.000000000000000000
-        end
-        item
-          SizeStyle = Absolute
-          Value = 25.000000000000000000
-        end
-        item
-          SizeStyle = Absolute
-          Value = 25.000000000000000000
-        end
-        item
-          SizeStyle = Absolute
-          Value = 25.000000000000000000
-        end
-        item
-          SizeStyle = Absolute
-          Value = 25.000000000000000000
-        end
-        item
-          SizeStyle = Absolute
-          Value = 25.000000000000000000
-        end
+          Value = 85.106386915272710000
+        end>
+      object lblName: TSkLabel
+        Align = Client
+        Anchors = []
+        Opacity = 0.500000000000000000
+        Size.Width = 350.000000000000000000
+        Size.Height = 86.234016418457030000
+        Size.PlatformDefault = False
+        StyledSettings = []
+        TextSettings.Font.Families = 'Segoe UI'
+        TextSettings.Font.Size = 50.000000000000000000
+        TextSettings.Font.Weight = Bold
+        TextSettings.HorzAlign = Justify
+        TextSettings.VertAlign = Leading
+        Words = <
+          item
+            Text = 'Name test'
+          end>
+      end
+    end
+    object gridMain: TGridPanelLayout
+      Align = Client
+      Size.Width = 350.000000000000000000
+      Size.Height = 579.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      ColumnCollection = <
         item
           Value = 100.000000000000000000
         end>
-      object aniPokemon: TSkAnimatedImage
+      ControlCollection = <
+        item
+          Column = 0
+          Control = svgGraphStats
+          Row = 1
+        end
+        item
+          Column = 0
+          Control = aniPokemon
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 35.724220913281680000
+        end
+        item
+          Value = 48.395260391355780000
+        end
+        item
+          Value = 15.880518695362540000
+        end>
+      object svgGraphStats: TSkSvg
         Align = Client
         HitTest = True
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
-        Size.Width = 175.000015258789100000
-        Size.Height = 165.000000000000000000
+        Size.Width = 350.000000000000000000
+        Size.Height = 280.208557128906300000
+        Size.PlatformDefault = False
+        Svg.Source = 
+          '<?xml version="1.0" encoding="UTF-8"?>'#13#10'<!DOCTYPE svg PUBLIC "-/' +
+          '/W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-200109' +
+          '04/DTD/svg10.dtd">'#13#10'<!-- Creator: CorelDRAW 2020 (64 Bit) -->'#13#10'<' +
+          'svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" widt' +
+          'h="2126px" height="1707px" version="1.0" shape-rendering="geomet' +
+          'ricPrecision" text-rendering="geometricPrecision" image-renderin' +
+          'g="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"'#13#10'vie' +
+          'wBox="0 0 215698 173193"'#13#10' xmlns:xlink="http://www.w3.org/1999/x' +
+          'link"'#13#10' xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">'#13#10' ' +
+          '<defs>'#13#10'  <font id="FontID0" horiz-adv-x="703" font-variant="nor' +
+          'mal" fill-rule="nonzero" font-style="normal" font-weight="700">'#13 +
+          #10#9'<font-face '#13#10#9#9'font-family="Segoe UI">'#13#10#9#9'<font-face-src>'#13#10#9#9#9 +
+          '<font-face-name name="Segoe UI Negrito"/>'#13#10#9#9'</font-face-src>'#13#10#9 +
+          '</font-face>'#13#10'   <missing-glyph><path d="M0 0z"/></missing-glyph' +
+          '>'#13#10'   <glyph unicode="%" horiz-adv-x="867" d="M210 345c-50,0 -90' +
+          ',16 -120,47 -31,32 -46,74 -46,127 0,58 16,105 49,139 32,34 76,51' +
+          ' 130,51 52,0 92,-15 121,-46 29,-31 44,-74 44,-130 0,-57 -16,-103' +
+          ' -48,-137 -32,-34 -75,-51 -129,-51zm9 279c-48,0 -71,-33 -71,-99 ' +
+          '0,-63 22,-94 68,-94 46,0 69,33 69,98 0,63 -22,95 -66,95zm502 76l' +
+          '-456 -700 -119 0 455 700 120 0zm-75 -710c-50,0 -90,16 -120,48 -3' +
+          '0,31 -46,74 -46,127 0,58 16,104 48,139 33,34 76,51 130,51 52,0 9' +
+          '3,-15 122,-46 29,-31 43,-74 43,-130 0,-57 -16,-103 -48,-138 -32,' +
+          '-34 -75,-51 -129,-51zm8 279c-47,0 -71,-33 -71,-99 0,-62 23,-94 6' +
+          '9,-94 46,0 69,32 69,98 0,30 -6,54 -18,70 -12,16 -29,25 -49,25z"/' +
+          '>'#13#10'   <glyph unicode="." horiz-adv-x="270" d="M134 -12c-25,0 -47' +
+          ',8 -63,23 -17,16 -25,35 -25,58 0,23 9,43 26,58 18,15 39,22 65,22' +
+          ' 26,0 48,-8 65,-23 17,-15 25,-34 25,-57 0,-24 -9,-43 -25,-58 -17' +
+          ',-15 -39,-23 -67,-23z"/>'#13#10'   <glyph unicode="1" horiz-adv-x="575' +
+          '" d="M406 716l0 -716 -154 0 0 542c-8,-7 -18,-15 -30,-21 -12,-7 -' +
+          '24,-13 -37,-18 -13,-5 -27,-10 -40,-14 -14,-4 -28,-6 -42,-8l0 130' +
+          'c40,12 78,27 113,45 36,18 67,38 96,60l93 0z"/>'#13#10'   <glyph unicod' +
+          'e="2" horiz-adv-x="575" d="M210 128l297 0 0 -128 -466 0 0 53c0,3' +
+          '6 6,68 18,96 12,28 27,54 45,77 18,23 38,43 60,60 22,18 42,33 62,' +
+          '47 21,15 38,29 54,42 15,13 28,27 39,40 10,13 18,27 24,40 5,13 8,' +
+          '28 8,43 0,30 -8,53 -25,68 -17,15 -43,23 -78,23 -60,0 -118,-24 -1' +
+          '73,-72l0 136c61,39 130,59 206,59 35,0 67,-5 95,-14 28,-9 52,-22 ' +
+          '72,-40 19,-17 34,-38 45,-63 10,-25 15,-52 15,-82 0,-32 -5,-61 -1' +
+          '5,-86 -10,-25 -23,-48 -40,-69 -16,-21 -35,-39 -57,-56 -22,-17 -4' +
+          '4,-34 -67,-49 -16,-11 -31,-22 -45,-33 -15,-11 -27,-22 -38,-32 -1' +
+          '1,-10 -20,-21 -27,-31 -6,-10 -10,-20 -10,-29z"/>'#13#10'   <glyph unic' +
+          'ode="3" horiz-adv-x="575" d="M57 23l0 134c47,-34 102,-51 164,-51' +
+          ' 40,0 70,8 92,25 22,17 33,40 33,71 0,31 -13,55 -41,72 -27,17 -65' +
+          ',25 -112,25l-65 0 0 118 60 0c91,0 137,30 137,91 0,57 -35,85 -105' +
+          ',85 -47,0 -92,-15 -137,-45l0 126c49,25 106,37 172,37 72,0 127,-1' +
+          '6 167,-48 40,-32 60,-74 60,-125 0,-91 -46,-149 -139,-172l0 -2c49' +
+          ',-6 88,-24 117,-54 29,-30 43,-66 43,-110 0,-65 -24,-117 -72,-155' +
+          ' -48,-38 -114,-57 -198,-57 -72,0 -131,12 -176,35z"/>'#13#10'   <glyph ' +
+          'unicode="4" horiz-adv-x="575" d="M465 700l0 -441 84 0 0 -115 -84' +
+          ' 0 0 -144 -141 0 0 144 -305 0 0 121c27,30 55,63 84,99 29,36 57,7' +
+          '3 84,111 27,38 52,76 75,115 23,38 43,75 59,110l143 0zm-308 -441l' +
+          '167 0 0 245c-11,-21 -24,-43 -37,-64 -13,-22 -27,-43 -42,-64 -15,' +
+          '-21 -29,-41 -44,-61 -15,-20 -30,-38 -43,-55z"/>'#13#10'   <glyph unico' +
+          'de="5" horiz-adv-x="575" d="M69 18l0 132c48,-29 99,-44 153,-44 4' +
+          '1,0 72,10 96,29 23,19 34,46 34,79 0,69 -49,104 -147,104 -36,0 -7' +
+          '8,-3 -125,-8l27 391 370 0 0 -126 -253 0 -10 -140c25,2 47,3 65,3 ' +
+          '72,0 128,-19 169,-57 41,-38 61,-88 61,-152 0,-71 -24,-128 -73,-1' +
+          '73 -49,-45 -114,-67 -197,-67 -67,0 -124,10 -170,30z"/>'#13#10'   <glyp' +
+          'h unicode="6" horiz-adv-x="575" d="M542 233c0,-34 -6,-67 -18,-97' +
+          ' -12,-30 -29,-56 -50,-78 -21,-22 -47,-39 -77,-52 -30,-13 -62,-19' +
+          ' -97,-19 -39,0 -75,7 -106,22 -31,14 -57,36 -79,64 -21,28 -38,62 ' +
+          '-49,102 -12,40 -17,86 -17,137 0,60 7,115 22,164 15,49 36,91 64,1' +
+          '26 27,35 61,62 100,81 39,19 83,29 132,29 54,0 96,-6 126,-19l0 -1' +
+          '29c-36,20 -74,30 -116,30 -26,0 -50,-5 -71,-15 -21,-10 -39,-25 -5' +
+          '4,-43 -15,-19 -27,-41 -36,-67 -9,-26 -13,-55 -14,-88l3 0c33,46 8' +
+          '2,69 147,69 29,0 55,-5 79,-16 24,-10 43,-25 60,-44 16,-19 29,-42' +
+          ' 39,-69 9,-27 14,-56 14,-89zm-151 -10c0,75 -31,113 -92,113 -14,0' +
+          ' -27,-3 -38,-8 -11,-5 -21,-13 -29,-22 -8,-9 -14,-21 -19,-33 -4,-' +
+          '13 -7,-27 -7,-43 0,-17 2,-33 7,-48 5,-15 11,-28 19,-39 8,-11 18,' +
+          '-20 29,-27 12,-6 24,-10 38,-10 14,0 26,3 38,8 11,6 21,14 29,24 8' +
+          ',10 14,22 18,37 4,15 6,30 6,48z"/>'#13#10'   <glyph unicode="A" horiz-' +
+          'adv-x="703" d="M696 0l-172 0 -50 156 -249 0 -49 -156 -171 0 255 ' +
+          '700 187 0 249 -700zm-258 277l-75 235c-6,18 -10,39 -12,63l-4 0c-2' +
+          ',-21 -6,-41 -12,-61l-76 -237 179 0z"/>'#13#10'   <glyph unicode="D" ho' +
+          'riz-adv-x="737" d="M80 0l0 700 248 0c249,0 373,-114 373,-341 0,-' +
+          '109 -34,-196 -102,-261 -68,-65 -158,-98 -271,-98l-248 0zm158 572' +
+          'l0 -444 78 0c68,0 122,21 161,61 39,41 58,97 58,168 0,67 -19,119 ' +
+          '-58,157 -39,38 -93,57 -162,57l-77 0z"/>'#13#10'   <glyph unicode="E" h' +
+          'oriz-adv-x="532" d="M500 0l-420 0 0 700 404 0 0 -128 -246 0 0 -1' +
+          '56 229 0 0 -128 -229 0 0 -160 262 0 0 -128z"/>'#13#10'   <glyph unicod' +
+          'e="F" horiz-adv-x="519" d="M485 572l-247 0 0 -172 227 0 0 -128 -' +
+          '227 0 0 -272 -158 0 0 700 405 0 0 -128z"/>'#13#10'   <glyph unicode="H' +
+          '" horiz-adv-x="766" d="M686 0l-158 0 0 285 -290 0 0 -285 -158 0 ' +
+          '0 700 158 0 0 -279 290 0 0 279 158 0 0 -700z"/>'#13#10'   <glyph unico' +
+          'de="K" horiz-adv-x="648" d="M662 0l-199 0 -204 304c-4,6 -10,19 -' +
+          '19,39l-2 0 0 -343 -158 0 0 700 158 0 0 -331 2 0c4,9 10,22 20,39l' +
+          '193 292 188 0 -244 -334 265 -366z"/>'#13#10'   <glyph unicode="P" hori' +
+          'z-adv-x="614" d="M238 241l0 -241 -158 0 0 700 247 0c176,0 265,-7' +
+          '4 265,-223 0,-70 -25,-127 -76,-171 -51,-43 -118,-65 -203,-65l-75' +
+          ' 0zm0 338l0 -218 62 0c84,0 126,37 126,110 0,72 -42,108 -126,108l' +
+          '-62 0z"/>'#13#10'   <glyph unicode="S" horiz-adv-x="560" d="M48 27l0 1' +
+          '56c28,-24 59,-42 92,-54 33,-12 67,-18 100,-18 20,0 37,2 52,5 15,' +
+          '4 27,9 37,15 10,6 17,14 22,22 5,9 7,18 7,28 0,14 -4,26 -12,36 -8' +
+          ',11 -19,21 -32,30 -13,9 -29,18 -48,26 -18,9 -38,17 -60,26 -55,23' +
+          ' -95,50 -122,83 -27,33 -40,73 -40,119 0,36 7,68 22,94 15,26 35,4' +
+          '8 60,65 25,17 55,29 88,37 33,8 68,12 105,12 36,0 69,-2 97,-7 28,' +
+          '-4 54,-11 78,-20l0 -146c-12,8 -24,15 -38,21 -14,6 -28,11 -43,16 ' +
+          '-14,4 -29,7 -44,9 -14,2 -28,3 -41,3 -18,0 -34,-2 -49,-5 -15,-3 -' +
+          '27,-8 -37,-14 -10,-6 -18,-13 -24,-22 -6,-9 -8,-18 -8,-29 0,-12 3' +
+          ',-22 9,-31 6,-9 15,-18 26,-26 11,-8 25,-16 42,-24 16,-8 35,-16 5' +
+          '5,-25 28,-12 53,-24 75,-37 22,-13 41,-28 57,-45 16,-17 28,-36 37' +
+          ',-57 9,-21 13,-46 13,-74 0,-39 -7,-72 -22,-99 -15,-26 -35,-48 -6' +
+          '0,-64 -25,-16 -55,-28 -88,-36 -34,-7 -69,-11 -107,-11 -38,0 -75,' +
+          '3 -109,10 -35,7 -65,16 -90,29z"/>'#13#10'   <glyph unicode="T" horiz-a' +
+          'dv-x="585" d="M572 572l-200 0 0 -572 -158 0 0 572 -199 0 0 128 5' +
+          '57 0 0 -128z"/>'#13#10'  </font>'#13#10' </defs>'#13#10' <g id="Camada_x0020_1">'#13#10 +
+          '  <metadata id="CorelCorpID_0Corel-Layer"/>'#13#10'  <g id="_181025797' +
+          '7104">'#13#10'   <rect fill="none" width="215698" height="173193"/>'#13#10' ' +
+          '  <g>'#13#10'    <g>'#13#10'     <path fill="#E6E7E8" d="M47048 52089l59252 ' +
+          '-32102 59252 32102 0 65156 -59252 33096 -59252 -33096 0 -65156z"' +
+          '/>'#13#10'     <path fill="#FEFEFE" fill-rule="nonzero" d="M46721 5153' +
+          '7l59579 -32278 59916 32461 0 65889c-19973,11152 -39947,22305 -59' +
+          '916,33466 -19972,-11155 -39942,-22314 -59916,-33466l0 -65889 337' +
+          ' -183zm1665 555l57250 31478 0 -62495 -57250 31017zm59246 32575l5' +
+          '7256 31481 0 -62962 -57256 31481zm56597 32583l-57265 -31486 0 63' +
+          '471 57265 -31985zm-59261 -32583l-57256 -31481 0 62962 57256 -314' +
+          '81zm668 64568l0 -63471 -57265 31486 57265 31985zm1328 -128160l0 ' +
+          '62495 57250 -31478 -57250 -31017z"/>'#13#10'    </g>'#13#10'    <text x="357' +
+          '2" y="49928"  fill="white" font-weight="bold" font-size="10146px' +
+          '" font-family="Segoe UI FontID0">SP. ATK</text>'#13#10'    <text x="35' +
+          '72" y="63423"  fill="white" font-weight="bold" font-size="10146p' +
+          'x" font-family="Segoe UI FontID0">%SPATK%</text>'#13#10'    <text x="3' +
+          '572" y="117655"  fill="white" font-weight="bold" font-size="1014' +
+          '6px" font-family="Segoe UI FontID0">%SPDEF%</text>'#13#10'    <text x=' +
+          '"3572" y="131151"  fill="white" font-weight="bold" font-size="10' +
+          '146px" font-family="Segoe UI FontID0">SP. DEF</text>'#13#10'    <text ' +
+          'x="85685" y="168906"  fill="white" font-weight="bold" font-size=' +
+          '"10146px" font-family="Segoe UI FontID0">SPD %SPEED%</text>'#13#10'   ' +
+          ' <text x="176180" y="117655"  fill="white" font-weight="bold" fo' +
+          'nt-size="10146px" font-family="Segoe UI FontID0">DEF</text>'#13#10'   ' +
+          ' <text x="176180" y="131151"  fill="white" font-weight="bold" fo' +
+          'nt-size="10146px" font-family="Segoe UI FontID0">%DEF%</text>'#13#10' ' +
+          '   <text x="176180" y="48184"  fill="white" font-weight="bold" f' +
+          'ont-size="10146px" font-family="Segoe UI FontID0">ATK</text>'#13#10'  ' +
+          '  <text x="176180" y="61679"  fill="white" font-weight="bold" fo' +
+          'nt-size="10146px" font-family="Segoe UI FontID0">%ATK%</text>'#13#10' ' +
+          '   <text x="91713" y="10726"  fill="white" font-weight="bold" fo' +
+          'nt-size="10146px" font-family="Segoe UI FontID0">HP %HP%</text>'#13 +
+          #10'   </g>'#13#10'  </g>'#13#10'  <path fill="#3CC6DE" fill-opacity="0.501961"' +
+          ' d="M76342 68223l29958 -15108 29958 15280 0 32824 -29958 15976 -' +
+          '29958 -16156 0 -32816z"/>'#13#10'  <circle fill="white" cx="106300" cy' +
+          '="20281" r="7015"/>'#13#10'  <circle fill="white" cx="47048" cy="52089' +
+          '" r="7015"/>'#13#10'  <circle fill="white" cx="165552" cy="52089" r="7' +
+          '015"/>'#13#10'  <circle fill="white" cx="106300" cy="150341" r="7015"/' +
+          '>'#13#10'  <circle fill="white" cx="165552" cy="118532" r="7015"/>'#13#10'  ' +
+          '<circle fill="white" cx="47048" cy="118532" r="7015"/>'#13#10'  <text ' +
+          'x="102396" y="23610"  fill="black" font-weight="bold" font-size=' +
+          '"10146px" font-family="Segoe UI FontID0">%1%</text>'#13#10'  <text x="' +
+          '43089" y="55536"  fill="black" font-weight="bold" font-size="101' +
+          '46px" font-family="Segoe UI FontID0">%2%</text>'#13#10'  <text x="4308' +
+          '9" y="121900"  fill="black" font-weight="bold" font-size="10146p' +
+          'x" font-family="Segoe UI FontID0">%3%</text>'#13#10'  <text x="161923"' +
+          ' y="55536"  fill="black" font-weight="bold" font-size="10146px" ' +
+          'font-family="Segoe UI FontID0">%6%</text>'#13#10'  <text x="161923" y=' +
+          '"121900"  fill="black" font-weight="bold" font-size="10146px" fo' +
+          'nt-family="Segoe UI FontID0">%5%</text>'#13#10'  <text x="102396" y="1' +
+          '54203"  fill="black" font-weight="bold" font-size="10146px" font' +
+          '-family="Segoe UI FontID0">%4%</text>'#13#10' </g>'#13#10'</svg>'
+      end
+      object aniPokemon: TSkAnimatedImage
+        Align = Client
+        Anchors = []
+        HitTest = True
+        Size.Width = 350.000000000000000000
+        Size.Height = 206.843246459960900000
         Size.PlatformDefault = False
         Data = {
           89504E470D0A1A0A0000000D49484452000001DB000001DB0806000000837A30
@@ -6460,54 +6640,180 @@ object PokemonFrameDetail: TPokemonFrameDetail
           73E6CC993367CED93A73E6CC993367CED93A73E6CC993367CED93A73E6CC9933
           67CE9CB375E6CC993367CE9CB375E6CC993367CE9CB375E6CC993367CE9CFDFB
           F6FF051800A7B66A7017BB93FC0000000049454E44AE426082}
-      end
-      object lblName: TSkLabel
-        Align = Client
-        Size.Width = 184.999984741210900000
-        Size.Height = 25.000000000000000000
-        Size.PlatformDefault = False
-        StyledSettings = [Style]
-        TextSettings.Font.Size = 18.000000000000000000
-        TextSettings.FontColor = claAliceblue
-        Words = <
-          item
-            Text = 'Bulbasaur'
-          end>
-      end
-      object svgHealthBackground: TSkSvg
-        Align = Client
-        Padding.Left = 4.000000000000000000
-        Padding.Top = 4.000000000000000000
-        Padding.Right = 4.000000000000000000
-        Padding.Bottom = 4.000000000000000000
-        Size.Width = 184.999984741210900000
-        Size.Height = 25.000000000000000000
-        Size.PlatformDefault = False
-        object SkSvg3: TSkSvg
-          Align = Left
-          Position.X = 4.000000000000000000
-          Position.Y = 4.000000000000000000
-          Size.Width = 24.000000000000000000
-          Size.Height = 17.000000000000000000
+        object GridPanelLayout2: TGridPanelLayout
+          Align = Client
+          Anchors = []
+          Size.Width = 350.000000000000000000
+          Size.Height = 206.843246459960900000
           Size.PlatformDefault = False
-          Svg.Source = 
-            '<?xml version="1.0" encoding="UTF-8"?>'#13#10'<!DOCTYPE svg PUBLIC "-/' +
-            '/W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-200109' +
-            '04/DTD/svg10.dtd">'#13#10'<!-- Creator: CorelDRAW 2020 (64 Bit) -->'#13#10'<' +
-            'svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" widt' +
-            'h="477px" height="477px" version="1.0" shape-rendering="geometri' +
-            'cPrecision" text-rendering="geometricPrecision" image-rendering=' +
-            '"optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"'#13#10'viewB' +
-            'ox="0 0 7494 7494"'#13#10' xmlns:xlink="http://www.w3.org/1999/xlink"'#13 +
-            #10' xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">'#13#10' <g id=' +
-            '"Camada_x0020_1">'#13#10'  <metadata id="CorelCorpID_0Corel-Layer"/>'#13#10 +
-            '  <circle fill="#D10808" cx="3747" cy="3747" r="3747"/>'#13#10'  <path' +
-            ' fill="#FEFEFE" d="M3357 1288l780 0c280,0 509,229 509,509l0 1051' +
-            ' 1051 0c280,0 509,229 509,509l0 780c0,280 -229,509 -509,509l-105' +
-            '1 0 0 1051c0,280 -229,509 -509,509l-780 0c-280,0 -510,-229 -510,' +
-            '-509l0 -1051 -1050 0c-280,0 -509,-229 -509,-509l0 -780c0,-280 22' +
-            '9,-509 509,-509l1050 0 0 -1051c0,-280 230,-509 510,-509z"/>'#13#10' </' +
-            'g>'#13#10'</svg>'
+          TabOrder = 0
+          ColumnCollection = <
+            item
+              Value = 69.585212865795600000
+            end
+            item
+              Value = 30.414787134204400000
+            end>
+          ControlCollection = <
+            item
+              Column = 1
+              Control = svgType1
+              Row = 0
+            end
+            item
+              Column = 1
+              Control = svgType2
+              Row = 1
+            end>
+          RowCollection = <
+            item
+              SizeStyle = Absolute
+              Value = 40.000000000000000000
+            end
+            item
+              SizeStyle = Absolute
+              Value = 40.000000000000000000
+            end
+            item
+              Value = 100.000000000000000000
+            end
+            item
+              SizeStyle = Auto
+            end>
+          object svgType1: TSkSvg
+            Align = Right
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 8.000000000000000000
+            Margins.Right = 2.000000000000000000
+            Margins.Bottom = 8.000000000000000000
+            Position.X = 252.000000000000000000
+            Position.Y = 8.000000000000000000
+            Size.Width = 96.000000000000000000
+            Size.Height = 24.000125885009770000
+            Size.PlatformDefault = False
+            Svg.OverrideColor = claSeagreen
+            Svg.Source = 
+              '<?xml version="1.0" encoding="UTF-8"?>'#13#10'<!DOCTYPE svg PUBLIC "-/' +
+              '/W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-200109' +
+              '04/DTD/svg10.dtd">'#13#10'<!-- Creator: CorelDRAW 2020 (64 Bit) -->'#13#10'<' +
+              'svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" widt' +
+              'h="5906px" height="1772px" version="1.0" shape-rendering="geomet' +
+              'ricPrecision" text-rendering="geometricPrecision" image-renderin' +
+              'g="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"'#13#10'vie' +
+              'wBox="0 0 590551 177165"'#13#10' xmlns:xlink="http://www.w3.org/1999/x' +
+              'link"'#13#10' xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">'#13#10' ' +
+              '<g id="Camada_x0020_1">'#13#10'  <metadata id="CorelCorpID_0Corel-Laye' +
+              'r"/>'#13#10'  <rect fill="#FEFEFE" width="590551" height="177165" rx="' +
+              '9449" ry="14173"/>'#13#10' </g>'#13#10'</svg>'
+            Svg.WrapMode = Stretch
+            object lblType1: TSkLabel
+              Align = Client
+              Margins.Left = 5.000000000000000000
+              Size.Width = 69.000000000000000000
+              Size.Height = 24.000125885009770000
+              Size.PlatformDefault = False
+              StyledSettings = [Style]
+              TextSettings.Font.Families = 'Segoe UI'
+              TextSettings.Font.Size = 15.000000000000000000
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Justify
+              TextSettings.Trimming = None
+              Words = <
+                item
+                  Text = 'Grass'
+                end>
+            end
+            object svgTypeIcon1: TSkSvg
+              Align = Left
+              Margins.Left = 2.000000000000000000
+              Margins.Top = 3.000000000000000000
+              Margins.Right = 2.000000000000000000
+              Margins.Bottom = 3.000000000000000000
+              Opacity = 0.800000011920929000
+              Position.X = 2.000000000000000000
+              Position.Y = 3.000000000000000000
+              Size.Width = 18.000000000000000000
+              Size.Height = 18.000125885009770000
+              Size.PlatformDefault = False
+              Svg.Source = 
+                '<svg fill="none" height="512" viewBox="0 0 512 512" width="512" ' +
+                'xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="' +
+                'm97.4121 440.649c-1.7574-1.653-3.4954-3.338-5.2132-5.056-90.6845' +
+                '5-90.684-90.68453-237.713 0-328.397 90.6841-90.6849 379.6401-96.' +
+                '7516 379.6401-96.7516s39.442 334.4646-51.242 425.1486c-80.54 80.' +
+                '54-205.522 89.55-296.005 27.031l72.908-89.471 116.55-25.163-95.1' +
+                '39-9.511 60.462-61.562 68.824-15.077-54.422-16.117 54.422-98.176' +
+                '-77.41 86.828-29.893-42.183 10.523 69.648-53.917 60.782-24.993-7' +
+                '6.9v102.268z" fill="#fff" fill-rule="evenodd"/></svg>'
+            end
+          end
+          object svgType2: TSkSvg
+            Align = Right
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 8.000000000000000000
+            Margins.Right = 2.000000000000000000
+            Margins.Bottom = 8.000000000000000000
+            Position.X = 252.000000000000000000
+            Position.Y = 48.000000000000000000
+            Size.Width = 96.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            Svg.OverrideColor = claSeagreen
+            Svg.Source = 
+              '<?xml version="1.0" encoding="UTF-8"?>'#13#10'<!DOCTYPE svg PUBLIC "-/' +
+              '/W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-200109' +
+              '04/DTD/svg10.dtd">'#13#10'<!-- Creator: CorelDRAW 2020 (64 Bit) -->'#13#10'<' +
+              'svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" widt' +
+              'h="5906px" height="1772px" version="1.0" shape-rendering="geomet' +
+              'ricPrecision" text-rendering="geometricPrecision" image-renderin' +
+              'g="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"'#13#10'vie' +
+              'wBox="0 0 590551 177165"'#13#10' xmlns:xlink="http://www.w3.org/1999/x' +
+              'link"'#13#10' xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">'#13#10' ' +
+              '<g id="Camada_x0020_1">'#13#10'  <metadata id="CorelCorpID_0Corel-Laye' +
+              'r"/>'#13#10'  <rect fill="#FEFEFE" width="590551" height="177165" rx="' +
+              '9449" ry="14173"/>'#13#10' </g>'#13#10'</svg>'
+            Svg.WrapMode = Stretch
+            object lblType2: TSkLabel
+              Align = Client
+              Margins.Left = 5.000000000000000000
+              Size.Width = 69.000000000000000000
+              Size.Height = 24.000000000000000000
+              Size.PlatformDefault = False
+              StyledSettings = [Style]
+              TextSettings.Font.Families = 'Segoe UI'
+              TextSettings.Font.Size = 15.000000000000000000
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Justify
+              TextSettings.Trimming = None
+              Words = <
+                item
+                  Text = 'Grass'
+                end>
+            end
+            object svgTypeIcon2: TSkSvg
+              Align = Left
+              Margins.Left = 2.000000000000000000
+              Margins.Top = 3.000000000000000000
+              Margins.Right = 2.000000000000000000
+              Margins.Bottom = 3.000000000000000000
+              Opacity = 0.800000011920929000
+              Position.X = 2.000000000000000000
+              Position.Y = 3.000000000000000000
+              Size.Width = 18.000000000000000000
+              Size.Height = 18.000000000000000000
+              Size.PlatformDefault = False
+              Svg.Source = 
+                '<svg fill="none" height="512" viewBox="0 0 512 512" width="512" ' +
+                'xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="' +
+                'm97.4121 440.649c-1.7574-1.653-3.4954-3.338-5.2132-5.056-90.6845' +
+                '5-90.684-90.68453-237.713 0-328.397 90.6841-90.6849 379.6401-96.' +
+                '7516 379.6401-96.7516s39.442 334.4646-51.242 425.1486c-80.54 80.' +
+                '54-205.522 89.55-296.005 27.031l72.908-89.471 116.55-25.163-95.1' +
+                '39-9.511 60.462-61.562 68.824-15.077-54.422-16.117 54.422-98.176' +
+                '-77.41 86.828-29.893-42.183 10.523 69.648-53.917 60.782-24.993-7' +
+                '6.9v102.268z" fill="#fff" fill-rule="evenodd"/></svg>'
+            end
+          end
         end
       end
     end
