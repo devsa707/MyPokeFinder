@@ -65,7 +65,6 @@ Win64/
 Android64/
 Android32/
 Android/
-Project/
 *.~*
 
 # Castalia statistics file (since XE7 Castalia is distributed with Delphi)
